@@ -37,14 +37,14 @@ def get_vector_store(text_chunks):
 
 def get_conversational_chain():
     prompt_template = """
-    Responda à pergunta o mais detalhadamente possível a partir do contexto fornecido, certifique-se de fornecer todos os detalhes. Se a resposta não estiver disponível
+    Responda à pergunta a partir do contexto fornecido, certifique-se de fornecer todos os detalhes. Se a resposta não estiver disponível
     no contexto, basta dizer "a resposta não está disponível no contexto". Não forneça uma resposta errada.\n\n
     Contexto:\n{context}\n
     Pergunta: \n{question}\n
     Resposta:\n
     """
 
-    model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
+    model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.5)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
 
