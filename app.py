@@ -37,8 +37,7 @@ def get_vector_store(text_chunks):
 
 def get_conversational_chain():
     prompt_template = """
-    Responda à pergunta a partir do contexto fornecido, certifique-se de fornecer todos os detalhes. Se a resposta não estiver disponível
-    no contexto, basta dizer "a resposta não está disponível no contexto". Não forneça uma resposta errada.\n\n
+    Responda à pergunta a partir do contexto fornecido, certifique-se de fornecer todos os detalhes.\n\n
     Contexto:\n{context}\n
     Pergunta: \n{question}\n
     Resposta:\n
